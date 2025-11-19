@@ -16,7 +16,6 @@ with open("compliments.csv", encoding="utf-8") as f:
     reader = csv.DictReader(f)
 
     for row in reader:
-        # conversion du id en nombre
         item = {
             "id": int(row["id"]),
             "type": row["type"],
@@ -27,5 +26,5 @@ with open("compliments.csv", encoding="utf-8") as f:
         table.put_item(Item=item)
 
         print(f"Inserted: {item}")
-        
+
 print("All compliments have been inserted.")
