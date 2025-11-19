@@ -1,4 +1,5 @@
-﻿1;cute;Tu rends chaque journée plus douce.;images/cute.jpg;
+﻿id;type;message;image
+1;cute;Tu rends chaque journée plus douce.;images/cute.jpg;
 2;cute;Ton sourire pourrait éclairer un village entier.;images/cute.jpg;
 3;cute;Tu es l’équivalent humain d’un câlin.;images/cute.jpg;
 4;cute;Tu rends la vie plus belle rien qu’en existant.;images/cute.jpg;
