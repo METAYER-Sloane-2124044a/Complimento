@@ -34,3 +34,13 @@ resource "aws_dynamodb_table" "compliments" {
     type = "N"
   }
 }
+
+resource "null_resource" "insert_compliments" {
+  depends_on = [
+    aws_dynamodb_table.compliments
+  ]
+
+  provisioner "local-exec" {
+    command = "py services/dynamodb/insert_compliments.py"
+  }
+}
