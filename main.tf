@@ -48,7 +48,7 @@ resource "aws_lambda_function" "get_lambda_function" {
   filename      = data.archive_file.lambda.output_path
   function_name = "get_random_lambda_function"
   role          = aws_iam_role.lambda_role.arn
-  handler       = "index.handler"
+  handler       = "index.get_handler_compliment"
 
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
