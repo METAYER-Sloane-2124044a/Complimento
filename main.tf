@@ -47,7 +47,7 @@ resource "null_resource" "insert_compliments" {
 # Init Lambda
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "services/lambda/index.js"
+  source_file = "services/lambda/index.py"
   output_path = "services/lambda/lambda_function.zip"
 }
 
@@ -73,9 +73,65 @@ resource "aws_lambda_function" "get_lambda_function" {
   filename      = data.archive_file.lambda.output_path
   function_name = "get_random_lambda_function"
   role          = aws_iam_role.lambda_role.arn
-  handler       = "index.handler"
+  handler       = "index.get_handler_compliment"
 
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
-  runtime = "nodejs18.x"
+  runtime = "python3.7"
+}
+
+# Init API Gateway
+resource "aws_api_gateway_rest_api" "lambda" {
+  name = "lambda_api"
+}
+
+# Ressource /compliment
+resource "aws_api_gateway_resource" "compliment" {
+  rest_api_id = aws_api_gateway_rest_api.lambda.id
+  parent_id   = aws_api_gateway_rest_api.lambda.root_resource_id
+  path_part   = "compliment"
+}
+
+resource "aws_api_gateway_method" "get" {
+  rest_api_id   = aws_api_gateway_rest_api.lambda.id
+  resource_id   = aws_api_gateway_resource.compliment.id
+  http_method   = "GET"
+  authorization = "NONE"
+}
+
+resource "aws_api_gateway_integration" "lambda_get" {
+  rest_api_id             = aws_api_gateway_rest_api.lambda.id
+  resource_id             = aws_api_gateway_resource.compliment.id
+  http_method             = aws_api_gateway_method.get.http_method
+  integration_http_method = "POST"
+  type                    = "AWS_PROXY"
+  uri                     = aws_lambda_function.get_lambda_function.invoke_arn
+}
+
+resource "aws_lambda_permission" "api_gw" {
+  statement_id  = "AllowAPIGatewayInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.get_lambda_function.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_api_gateway_rest_api.lambda.execution_arn}/*/*/compliment"
+}
+
+# Stage for API
+# Deployment
+resource "aws_api_gateway_deployment" "deployment" {
+  depends_on = [
+    aws_api_gateway_integration.lambda_get
+  ]
+  rest_api_id = aws_api_gateway_rest_api.lambda.id
+
+  triggers = {
+    redeploy = timestamp()
+  }
+}
+
+# Stage dev
+resource "aws_api_gateway_stage" "dev" {
+  stage_name    = "dev"
+  rest_api_id   = aws_api_gateway_rest_api.lambda.id
+  deployment_id = aws_api_gateway_deployment.deployment.id
 }
