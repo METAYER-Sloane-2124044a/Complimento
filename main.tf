@@ -76,7 +76,8 @@ resource "aws_lambda_function" "get_lambda_function" {
   handler       = "index.get_handler_compliment"
 
   source_code_hash = data.archive_file.lambda.output_base64sha256
-
+  timeout = 10
+  
   runtime = "python3.7"
 }
 
@@ -105,7 +106,7 @@ resource "aws_api_gateway_integration" "lambda_get" {
   http_method             = aws_api_gateway_method.get.http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
-  uri                     = aws_lambda_function.get_lambda_function.invoke_arn
+  uri = "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/${aws_lambda_function.get_lambda_function.arn}/invocations"
 }
 
 resource "aws_lambda_permission" "api_gw" {
@@ -134,4 +135,8 @@ resource "aws_api_gateway_stage" "dev" {
   stage_name    = "dev"
   rest_api_id   = aws_api_gateway_rest_api.lambda.id
   deployment_id = aws_api_gateway_deployment.deployment.id
+
+  depends_on = [
+    aws_api_gateway_deployment.deployment
+  ]
 }
