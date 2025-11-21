@@ -1,16 +1,16 @@
 provider "aws" {
-  access_key                  = "test"
-  secret_key                  = "test"
-  region                      = "us-east-1"
+  access_key                  = var.AWS_ACCESS_KEY_ID
+  secret_key                  = var.AWS_SECRET_ACCESS_KEY
+  region                      = var.REGION_NAME
   skip_credentials_validation = true
   skip_metadata_api_check     = true
   skip_requesting_account_id  = true
   endpoints {
-    s3         = "http://localhost:4566"
-    dynamodb   = "http://localhost:4566"
-    lambda     = "http://localhost:4566"
-    apigateway = "http://localhost:4566"
-    iam        = "http://localhost:4566"
+    s3         = "${var.ENDPOINT_URL}"
+    dynamodb   = "${var.ENDPOINT_URL}"
+    lambda     = "${var.ENDPOINT_URL}"
+    apigateway = "${var.ENDPOINT_URL}"
+    iam        = "${var.ENDPOINT_URL}"
   }
   s3_use_path_style = true
 }
@@ -50,7 +50,6 @@ resource "null_resource" "insert_compliments" {
   }
 }
 
-
 resource "aws_s3_bucket_website_configuration" "website_config" {
   bucket = aws_s3_bucket.complimento_bucket.bucket
 
@@ -70,11 +69,18 @@ resource "aws_s3_object" "index_html" {
   content_type = "text/html"
 }
 
+data "template_file" "compliments_html" {
+  template = file("${path.module}/web/compliments.html.tpl")
+
+  vars = {
+    base_api_url = "http://localhost:4566/restapis/${aws_api_gateway_rest_api.lambda.id}/dev/_user_request_/compliment"
+  }
+}
 
 resource "aws_s3_object" "compliments_html" {
   bucket       = aws_s3_bucket.complimento_bucket.id
   key          = "compliments.html"
-  content      = file("${path.module}/web/compliments.html")
+  content      = data.template_file.compliments_html.rendered
   content_type = "text/html"
   etag         = filemd5("${path.module}/web/compliments.html")
 }
@@ -245,10 +251,6 @@ resource "aws_api_gateway_deployment" "deployment" {
     aws_api_gateway_integration.lambda_get
   ]
   rest_api_id = aws_api_gateway_rest_api.lambda.id
-
-  triggers = {
-    redeploy = timestamp()
-  }
 }
 
 # Stage dev
