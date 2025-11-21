@@ -148,6 +148,14 @@ resource "aws_s3_object" "image_drole" {
   etag         = filemd5("${path.module}/services/dynamodb/images/drole.jpg")
 }
 
+resource "aws_s3_object" "image_fond" {
+  bucket       = aws_s3_bucket.complimento_bucket.id
+  key          = "fond.jpg"
+  source       = "${path.module}/services/dynamodb/images/fond.jpg"
+  content_type = "image/jpeg"
+  etag         = filemd5("${path.module}/services/dynamodb/images/fond.jpg")
+}
+
 # Init Lambda
 data "archive_file" "lambda" {
   type        = "zip"
@@ -252,6 +260,10 @@ resource "aws_api_gateway_stage" "dev" {
   depends_on = [
     aws_api_gateway_deployment.deployment
   ]
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 locals {
@@ -259,9 +271,5 @@ locals {
     REGION_NAME = "${var.REGION_NAME}"
     AWS_ACCESS_KEY_ID  = "${var.AWS_ACCESS_KEY_ID}"
     AWS_SECRET_ACCESS_KEY = "${var.AWS_SECRET_ACCESS_KEY}"
-  }
-
-  lifecycle {
-    create_before_destroy = true
   }
 }
