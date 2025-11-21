@@ -46,7 +46,7 @@ resource "null_resource" "insert_compliments" {
         ENDPOINT_URL = "${var.ENDPOINT_URL}"
       }
     )
-    command = "py services/dynamodb/insert_compliments.py"
+    command = "python services/dynamodb/insert_compliments.py"
   }
 }
 
@@ -150,10 +150,18 @@ resource "aws_s3_object" "image_drole" {
 
 resource "aws_s3_object" "image_fond" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "fond.jpg"
+  key          = "${path.module}/services/dynamodb/images/fond.jpg"
   source       = "${path.module}/services/dynamodb/images/fond.jpg"
   content_type = "image/jpeg"
   etag         = filemd5("${path.module}/services/dynamodb/images/fond.jpg")
+}
+
+resource "aws_s3_object" "image_fond2" {
+  bucket       = aws_s3_bucket.complimento_bucket.id
+  key          = "fond.jpg"
+  source       = "${path.module}/services/dynamodb/images/fond2.jpg"
+  content_type = "image/jpeg"
+  etag         = filemd5("${path.module}/services/dynamodb/images/fond2.jpg")
 }
 
 # Init Lambda
