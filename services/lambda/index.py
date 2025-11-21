@@ -1,6 +1,8 @@
 import boto3
 import json
+import os
 from boto3.dynamodb.conditions import Attr
+
 
 def get_handler_compliment(event, context):
     try:
@@ -11,10 +13,10 @@ def get_handler_compliment(event, context):
 
         dynamodb = boto3.resource(
             "dynamodb",
-            endpoint_url="http://localstack:4566",
-            region_name="us-east-1",
-            aws_access_key_id="test",
-            aws_secret_access_key="test"
+            endpoint_url=os.environ["ENDPOINT_URL_LAMBDA"],
+            region_name=os.environ["REGION_NAME"],
+            aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+            aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"]
         )
 
         table = dynamodb.Table("compliments")
