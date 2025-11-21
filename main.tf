@@ -46,7 +46,7 @@ resource "null_resource" "insert_compliments" {
         ENDPOINT_URL = "${var.ENDPOINT_URL}"
       }
     )
-    command = "py services/dynamodb/insert_compliments.py"
+    command = "python services/dynamodb/insert_compliments.py"
   }
 }
 
