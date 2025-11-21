@@ -9,10 +9,10 @@ print("Using CSV:", CSV_PATH)
 
 dynamodb = boto3.resource(
     "dynamodb",
-    endpoint_url="http://localhost:4566",
-    region_name="us-east-1",
-    aws_access_key_id="test",
-    aws_secret_access_key="test"
+    endpoint_url=os.environ["ENDPOINT_URL"],
+    region_name=os.environ["REGION_NAME"],
+    aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"]
 )
 
 table = dynamodb.Table("compliments")
