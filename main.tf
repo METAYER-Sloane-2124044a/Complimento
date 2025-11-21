@@ -119,49 +119,49 @@ resource "aws_s3_bucket_public_access_block" "public_access_block" {
 resource "aws_s3_object" "image_cute" {
   bucket       = aws_s3_bucket.complimento_bucket.id
   key          = "cute.jpg"
-  source       = "${path.module}/services/dynamodb/images/cute.jpg"
+  source       = "${path.module}/web/images/cute.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/services/dynamodb/images/cute.jpg")
+  etag         = filemd5("${path.module}/web/images/cute.jpg")
 }
 
 resource "aws_s3_object" "image_motivation" {
   bucket       = aws_s3_bucket.complimento_bucket.id
   key          = "motivation.jpg"
-  source       = "${path.module}/services/dynamodb/images/motivation.jpg"
+  source       = "${path.module}/web/images/motivation.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/services/dynamodb/images/motivation.jpg")
+  etag         = filemd5("${path.module}/web/images/motivation.jpg")
 }
 
 resource "aws_s3_object" "image_romantique" {
   bucket       = aws_s3_bucket.complimento_bucket.id
   key          = "romantique.jpg"
-  source       = "${path.module}/services/dynamodb/images/romantique.jpg"
+  source       = "${path.module}/web/images/romantique.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/services/dynamodb/images/romantique.jpg")
+  etag         = filemd5("${path.module}/web/images/romantique.jpg")
 }
 
 resource "aws_s3_object" "image_drole" {
   bucket       = aws_s3_bucket.complimento_bucket.id
   key          = "drole.jpg"
-  source       = "${path.module}/services/dynamodb/images/drole.jpg"
+  source       = "${path.module}/web/images/drole.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/services/dynamodb/images/drole.jpg")
+  etag         = filemd5("${path.module}/web/images/drole.jpg")
 }
 
 resource "aws_s3_object" "image_fond" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "${path.module}/services/dynamodb/images/fond.jpg"
-  source       = "${path.module}/services/dynamodb/images/fond.jpg"
+  key          = "${path.module}/web/images/fond.jpg"
+  source       = "${path.module}/web/images/fond.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/services/dynamodb/images/fond.jpg")
+  etag         = filemd5("${path.module}/web/images/fond.jpg")
 }
 
 resource "aws_s3_object" "image_fond2" {
   bucket       = aws_s3_bucket.complimento_bucket.id
   key          = "fond.jpg"
-  source       = "${path.module}/services/dynamodb/images/fond2.jpg"
+  source       = "${path.module}/web/images/fond2.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/services/dynamodb/images/fond2.jpg")
+  etag         = filemd5("${path.module}/web/images/fond2.jpg")
 }
 
 # Init Lambda
