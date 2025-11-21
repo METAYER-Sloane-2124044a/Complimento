@@ -40,6 +40,12 @@ resource "null_resource" "insert_compliments" {
   ]
 
   provisioner "local-exec" {
+    environment = merge(
+      local.shared_env,
+      {
+        ENDPOINT_URL = "${var.ENDPOINT_URL}"
+      }
+    )
     command = "py services/dynamodb/insert_compliments.py"
   }
 }
@@ -79,6 +85,15 @@ resource "aws_lambda_function" "get_lambda_function" {
   timeout = 10
   
   runtime = "python3.7"
+
+  environment {
+      variables = merge(
+        local.shared_env,
+        {
+          ENDPOINT_URL_LAMBDA = "${var.ENDPOINT_URL_LAMBDA}"
+        }
+      )
+  }
 }
 
 # Init API Gateway
@@ -139,4 +154,12 @@ resource "aws_api_gateway_stage" "dev" {
   depends_on = [
     aws_api_gateway_deployment.deployment
   ]
+}
+
+locals {
+  shared_env = {
+    REGION_NAME = "${var.REGION_NAME}"
+    AWS_ACCESS_KEY_ID  = "${var.AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY = "${var.AWS_SECRET_ACCESS_KEY}"
+  }
 }
