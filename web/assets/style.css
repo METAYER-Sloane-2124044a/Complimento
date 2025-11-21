@@ -123,9 +123,15 @@ section{
    background-color: rgba(252, 228, 236, 0.5);
    border-radius: 10%;
    margin: 10%;
+   padding: 40px;
 }
 
 .buttons{
     display: flex;
     justify-content: space-around;
+}
+
+.mon_bloc-compliments{
+    display: flex;
+    justify-content: space-between;
 }
