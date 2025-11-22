@@ -17,3 +17,8 @@ variable "AWS_ACCESS_KEY_ID" {
 variable "AWS_SECRET_ACCESS_KEY" {
   type = string
 }
+
+variable "INDEX_PAGE" {
+  type    = string
+  default = "index.html"
+}
