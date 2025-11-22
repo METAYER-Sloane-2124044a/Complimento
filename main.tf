@@ -87,7 +87,6 @@ resource "aws_s3_object" "style_css" {
   etag         = filemd5("${path.module}/web/style.css")
 }
 
-
 resource "aws_s3_bucket_policy" "public_policy" {
   bucket = aws_s3_bucket.complimento_bucket.id
   policy = jsonencode({
