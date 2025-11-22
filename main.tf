@@ -81,10 +81,10 @@ resource "aws_s3_object" "compliments_html" {
 
 resource "aws_s3_object" "style_css" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "style.css"
-  content      = file("${path.module}/web/style.css")
+  key          = "style/style.css"
+  content      = file("${path.module}/web/style/style.css")
   content_type = "text/css"
-  etag         = filemd5("${path.module}/web/style.css")
+  etag         = filemd5("${path.module}/web/style/style.css")
 }
 
 resource "aws_s3_bucket_policy" "public_policy" {
