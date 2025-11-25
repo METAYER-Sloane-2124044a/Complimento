@@ -73,7 +73,8 @@ data "template_file" "compliments_html" {
   template = file("${path.module}/web/compliments.html.tpl")
 
   vars = {
-    base_api_url = "${var.ENDPOINT_URL}/restapis/${aws_api_gateway_rest_api.lambda.id}/dev/_user_request_/compliment"
+    base_api_url = "${var.ENDPOINT_URL}/restapis/${aws_api_gateway_rest_api.lambda.id}/dev/_user_request_/compliment",
+    base_image_url = "${var.DIR_IMG_S3}/"
   }
 }
 
@@ -122,50 +123,50 @@ resource "aws_s3_bucket_public_access_block" "public_access_block" {
 
 resource "aws_s3_object" "image_cute" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "assets/images/cute.jpg"
-  source       = "${path.module}/web/assets/images/cute.jpg"
+  key          = "${var.DIR_IMG_S3}/cute.jpg"
+  source       = "${path.module}/${var.PATH_IMG_LOCAL}/cute.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/web/assets/images/cute.jpg")
+  etag         = filemd5("${path.module}/${var.PATH_IMG_LOCAL}/cute.jpg")
 }
 
 resource "aws_s3_object" "image_motivation" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "assets/images/motivation.jpg"
-  source       = "${path.module}/web/assets/images/motivation.jpg"
+  key          = "${var.DIR_IMG_S3}/motivation.jpg"
+  source       = "${path.module}/${var.PATH_IMG_LOCAL}/motivation.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/web/assets/images/motivation.jpg")
+  etag         = filemd5("${path.module}/${var.PATH_IMG_LOCAL}/motivation.jpg")
 }
 
 resource "aws_s3_object" "image_romantique" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "assets/images/romantique.jpg"
-  source       = "${path.module}/web/assets/images/romantique.jpg"
+  key          = "${var.DIR_IMG_S3}/romantique.jpg"
+  source       = "${path.module}/${var.PATH_IMG_LOCAL}/romantique.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/web/assets/images/romantique.jpg")
+  etag         = filemd5("${path.module}/${var.PATH_IMG_LOCAL}/romantique.jpg")
 }
 
 resource "aws_s3_object" "image_drole" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "assets/images/drole.jpg"
-  source       = "${path.module}/web/assets/images/drole.jpg"
+  key          = "${var.DIR_IMG_S3}/drole.jpg"
+  source       = "${path.module}/${var.PATH_IMG_LOCAL}/drole.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/web/assets/images/drole.jpg")
+  etag         = filemd5("${path.module}/${var.PATH_IMG_LOCAL}/drole.jpg")
 }
 
 resource "aws_s3_object" "image_fond" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "assets/images/fond.jpg"
-  source       = "${path.module}/web/assets/images/fond.jpg"
+  key          = "${var.DIR_IMG_S3}/fond.jpg"
+  source       = "${path.module}/${var.PATH_IMG_LOCAL}/fond.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/web/assets/images/fond.jpg")
+  etag         = filemd5("${path.module}/${var.PATH_IMG_LOCAL}/fond.jpg")
 }
 
 resource "aws_s3_object" "image_fond2" {
   bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "assets/images/fond2.jpg"
-  source       = "${path.module}/web/assets/images/fond2.jpg"
+  key          = "${var.DIR_IMG_S3}/fond2.jpg"
+  source       = "${path.module}/${var.PATH_IMG_LOCAL}/fond2.jpg"
   content_type = "image/jpeg"
-  etag         = filemd5("${path.module}/web/assets/images/fond2.jpg")
+  etag         = filemd5("${path.module}/${var.PATH_IMG_LOCAL}/fond2.jpg")
 }
 
 # Init Lambda
