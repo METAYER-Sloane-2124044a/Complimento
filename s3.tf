@@ -1,3 +1,5 @@
+# ---- S3 Bucket ----
+
 # Create S3 Bucket
 resource "aws_s3_bucket" "complimento_bucket" {
   bucket = "complimento-bucket"
@@ -14,6 +16,16 @@ resource "aws_s3_bucket_website_configuration" "website_config" {
   }
 }
 
+# ---- HTML/CSS/Template Files ----
+
+# Index HTML File
+resource "aws_s3_object" "index_html" {
+  bucket       = aws_s3_bucket.complimento_bucket.id
+  key          = "index.html"
+  content      = file("${path.module}/web/index.html")
+  content_type = "text/html"
+}
+
 # Template HTML for compliments.html
 data "template_file" "compliments_html" {
   template = file("${path.module}/web/compliments.html.tpl")
@@ -21,14 +33,6 @@ data "template_file" "compliments_html" {
     base_api_url   = "${var.ENDPOINT_URL}/restapis/${aws_api_gateway_rest_api.lambda.id}/dev/_user_request_/compliment",
     base_image_url = "${var.DIR_IMG_S3}/"
   }
-}
-
-# HTML / CSS Files
-resource "aws_s3_object" "index_html" {
-  bucket       = aws_s3_bucket.complimento_bucket.id
-  key          = "index.html"
-  content      = file("${path.module}/web/index.html")
-  content_type = "text/html"
 }
 
 # HTML generated from template

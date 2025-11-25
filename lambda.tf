@@ -5,6 +5,8 @@ data "archive_file" "lambda" {
   output_path = "services/lambda/lambda_function.zip"
 }
 
+# ---- IAM Role and Policy ----
+
 # IAM Policy Document for Lambda Assume Role
 data "aws_iam_policy_document" "assume_role" {
   statement {
@@ -23,7 +25,16 @@ resource "aws_iam_role" "lambda_role" {
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
-# IAM Policy Attachment for Lambda Logging
+# Permission to Lambda to access DynamoDB
+resource "aws_iam_role_policy_attachment" "lambda_dynamodb" {
+  role       = aws_iam_role.lambda_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+}
+
+
+# ---- Lambda Function ----
+
+# AWS Lambda Function to get random compliment
 resource "aws_lambda_function" "get_lambda_function" {
   filename         = data.archive_file.lambda.output_path
   function_name    = "get_random_lambda_function"
@@ -31,7 +42,7 @@ resource "aws_lambda_function" "get_lambda_function" {
   handler          = "index.get_handler_compliment"
   source_code_hash = data.archive_file.lambda.output_base64sha256
   timeout          = 10
-  runtime          = "python3.7"
+  runtime          = "python3.9"
 
   environment {
     variables = merge(
@@ -42,6 +53,8 @@ resource "aws_lambda_function" "get_lambda_function" {
     )
   }
 }
+
+# ---- API Gateway ----
 
 # Lambda Permission for API Gateway
 resource "aws_lambda_permission" "api_gw" {

@@ -1,3 +1,5 @@
+# ---- API Gateway ----
+
 # API Gateway Configuration
 resource "aws_api_gateway_rest_api" "lambda" {
   name = "lambda_api"
@@ -10,7 +12,9 @@ resource "aws_api_gateway_resource" "compliment" {
   path_part   = "compliment"
 }
 
-# 
+# ---- Method and Integration ----
+
+#  API Gateway Method for GET
 resource "aws_api_gateway_method" "get" {
   rest_api_id   = aws_api_gateway_rest_api.lambda.id
   resource_id   = aws_api_gateway_resource.compliment.id
@@ -27,6 +31,8 @@ resource "aws_api_gateway_integration" "lambda_get" {
   type                    = "AWS_PROXY"
   uri                     = "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/${aws_lambda_function.get_lambda_function.arn}/invocations"
 }
+
+# ---- Deployment and Stage ----
 
 # API Gateway Deployment
 resource "aws_api_gateway_deployment" "deployment" {

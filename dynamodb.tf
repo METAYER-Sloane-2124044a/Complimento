@@ -16,6 +16,13 @@ resource "null_resource" "insert_compliments" {
     aws_dynamodb_table.compliments
   ]
 
+  triggers = {
+    # Compute hash of the data file to re-run if the data changes
+    file_hash = filemd5("${path.module}/services/dynamodb/compliments.csv")
+    # Compute hash of the script to re-run if the script changes
+    script_hash = filemd5("${path.module}/services/dynamodb/insert_compliments.py")
+  }
+
   provisioner "local-exec" {
     environment = merge(
       local.shared_env,
@@ -23,6 +30,7 @@ resource "null_resource" "insert_compliments" {
         ENDPOINT_URL = "${var.ENDPOINT_URL}"
       }
     )
+
     command = "python services/dynamodb/insert_compliments.py"
   }
 }
