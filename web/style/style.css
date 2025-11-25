@@ -7,6 +7,7 @@
 }
 
 body {
+    min-height: 100vh;
     color: var(--couleur-texte);
     font-family: var(--font-douce);
     line-height: 1.6;
@@ -30,7 +31,7 @@ body {
 
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.7em;
     color: var(--couleur-accent); 
     text-shadow: 1px 1px 2px var(--couleur-primaire);
     margin-bottom: 20px;
@@ -66,7 +67,11 @@ strong {
 }
 
 .side-image {
-    width: 250px;
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease;
 }
 
 section{
@@ -81,57 +86,111 @@ section{
     justify-content: space-between;
 }
 
-.cloud-button {
+#txtCompliment {
+    opacity: 0;
+    transform: translateY(-10px);
+    font-size: 1.2em;
+    color: var(--couleur-texte);
+    background: linear-gradient(145deg, rgba(255,182,193,0.2), rgba(255,192,203,0.15));
+    padding: 30px 50px;
+    border-radius: 30px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12), 0 0 15px rgba(255,182,193,0.3);
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    line-height: 1.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#txtCompliment.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.compliment-btn {
     display: inline-block;
     padding: 15px 30px;
-    background: #ffffff;
+    background-color: #ffffff;
     color: var(--couleur-texte);
+    font-family: var(--font-douce);
     font-weight: bold;
-    text-decoration: none;
+    font-size: 1em;
+    border: none;
     border-radius: 50px;
-    box-shadow: 
-        0 0 0 8px #ffe4f0,   /* halo rose clair */
-        0 8px 15px rgba(0, 0, 0, 0.15); /* ombre */
+    box-shadow:
+        0 0 0 8px #ffe4f0,
+        0 8px 15px rgba(0, 0, 0, 0.15),
+        inset 0 -2px 5px rgba(0,0,0,0.05);
     position: relative;
+    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cloud-button::before {
+.compliment-btn::before,
+.compliment-btn::after {
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: translateY(-50%);
+}
+
+.compliment-btn::before {
     left: -15px;
     box-shadow: -5px 0 0 4px #ffe4f0;
 }
 
-.cloud-button::after {
+.compliment-btn::after {
     right: -15px;
     box-shadow: 5px 0 0 4px #ffe4f0;
 }
 
 /* Effet hover */
-.cloud-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 0 0 10px #ffd9eb,
-        0 12px 20px rgba(0, 0, 0, 0.18);
+.compliment-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow:
+        0 0 0 12px #ffd9eb,
+        0 14px 25px rgba(0, 0, 0, 0.18),
+        inset 0 -2px 5px rgba(0,0,0,0.08);
 }
 
 .milieu{
+   flex: 3;
    background-color: rgba(252, 228, 236, 0.5);
-   border-radius: 10%;
+   border-radius: 15px;
 }
 
 .milieu-compliments{
    background-color: rgba(252, 228, 236, 0.5);
-   border-radius: 10%;
-   margin: 10%;
-   padding: 40px;
+   border-radius: 15px;
+   width: 80%;
+   margin: 20px auto;
+   padding: 40px;   
 }
 
-.buttons{
+.buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .mon_bloc-compliments{
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

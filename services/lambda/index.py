@@ -1,6 +1,8 @@
 import boto3
 import json
 import os
+import random
+
 from boto3.dynamodb.conditions import Attr
 
 
@@ -40,7 +42,7 @@ def get_handler_compliment(event, context):
                 })
             }
         
-        random_item = items[0]
+        random_item = random.choice(items)
         print("Item :", random_item)
             
         # Return the corresponding message and image
