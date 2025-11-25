@@ -10,9 +10,9 @@
     <div class="milieu-compliments">
       <h1>☆ La page des Compliments ☆</h1>
       <div class="mon_bloc-compliments">
-        <img src="assets/images/cute.jpg" class="side-image" alt="side img" />
+        <img src="" class="side-image" />
         <p id="txtCompliment"></p>
-        <img src="assets/images/cute.jpg" class="side-image" alt="side img" />
+        <img src="" class="side-image" />
       </div>
       <section class="buttons">
         <button class="compliment-btn" data-type="cute">
@@ -37,27 +37,44 @@
     const urlImage = `${base_image_url}`;
     const txtCompliment = document.getElementById("txtCompliment");
     const complimentBtn = document.querySelectorAll(".compliment-btn");
+    const imgs = document.querySelectorAll(".side-image");
 
     function changeText(newText) {
-      txtCompliment.classList.remove("show");
+      txtCompliment.style.opacity = 0;
+      txtCompliment.style.transform = "translateY(-10px)";
 
       setTimeout(() => {
         txtCompliment.textContent = newText;
-        txtCompliment.classList.add("show");
-      }, 150);
+        txtCompliment.style.opacity = 1;
+        txtCompliment.style.transform = "translateY(0)";
+      }, 250);
     }
 
     function changeImage(name) {
-      const url = urlImage + name;
-      const imgs = document.querySelectorAll(".side-image");
       imgs.forEach((img) => {
-        img.src = url;
+        // Fade out
+        img.style.opacity = 0;
+        img.style.transform = "scale(0.95)";
       });
+
+      const url = urlImage + name;
+
+      setTimeout(() => {
+        const url = urlImage + name;
+        imgs.forEach((img) => {
+          img.src = url;
+          // Fade in
+          img.style.opacity = 1;
+          img.style.transform = "scale(1)";
+        });
+      }, 250); // Fade out duration
     }
 
     for (const button of complimentBtn) {
       button.addEventListener("click", async () => {
         const typeBtn = button.dataset.type;
+
+        complimentBtn.forEach((btn) => (btn.disabled = true));
 
         try {
           // Call Lambda with API Gateway
@@ -74,6 +91,8 @@
         } catch (err) {
           console.error("Erreur lors de l'appel à la Lambda :", err);
           changeText("☆" + "Impossible de récupérer le compliment." + "☆");
+        } finally {
+          complimentBtn.forEach((btn) => (btn.disabled = false));
         }
       });
     }
