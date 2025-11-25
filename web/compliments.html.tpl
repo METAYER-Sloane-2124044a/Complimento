@@ -34,6 +34,7 @@
   </body>
   <script>
     const baseApiUrl = `${base_api_url}`;
+    const urlImage = `${base_image_url}`;
     const txtCompliment = document.getElementById("txtCompliment");
     const complimentBtn = document.querySelectorAll(".compliment-btn");
 
@@ -44,6 +45,14 @@
         txtCompliment.textContent = newText;
         txtCompliment.classList.add("show");
       }, 150);
+    }
+
+    function changeImage(name) {
+      const url = urlImage + name;
+      const imgs = document.querySelectorAll(".side-image");
+      imgs.forEach((img) => {
+        img.src = url;
+      });
     }
 
     for (const button of complimentBtn) {
@@ -61,6 +70,7 @@
           console.log("data : ", data);
 
           changeText("☆" + data.message + "☆");
+          changeImage(data.image);
         } catch (err) {
           console.error("Erreur lors de l'appel à la Lambda :", err);
           changeText("☆" + "Impossible de récupérer le compliment." + "☆");

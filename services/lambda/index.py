@@ -5,6 +5,15 @@ import random
 
 from boto3.dynamodb.conditions import Attr
 
+dynamodb = boto3.resource(
+    "dynamodb",
+    endpoint_url=os.environ["ENDPOINT_URL_LAMBDA"],
+    region_name=os.environ["REGION_NAME"],
+    aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"]
+)
+
+table = dynamodb.Table("compliments")
 
 def get_handler_compliment(event, context):
     try:
@@ -13,15 +22,6 @@ def get_handler_compliment(event, context):
         type_selected = event['queryStringParameters']['type']
         print("Type selected :", type_selected)
 
-        dynamodb = boto3.resource(
-            "dynamodb",
-            endpoint_url=os.environ["ENDPOINT_URL_LAMBDA"],
-            region_name=os.environ["REGION_NAME"],
-            aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
-            aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"]
-        )
-
-        table = dynamodb.Table("compliments")
         print("Table : ", table)
 
         response = table.scan(
@@ -30,7 +30,7 @@ def get_handler_compliment(event, context):
         
         print("Response : ", response)
 
-        items = response.get("Items") or []
+        items = response.get("Items", [])
 
         if not items:
             print("Items is empty")
