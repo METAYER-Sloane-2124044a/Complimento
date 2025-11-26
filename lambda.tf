@@ -1,7 +1,7 @@
 # Archive the Lambda function code
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "services/lambda/index.py"
+  source_dir = "services/lambda/"
   output_path = "services/lambda/lambda_function.zip"
 }
 
@@ -54,13 +54,44 @@ resource "aws_lambda_function" "get_lambda_function" {
   }
 }
 
+# AWS Lambda Function to delete compliment
+resource "aws_lambda_function" "delete_lambda_function" {
+  filename         = data.archive_file.lambda.output_path
+  function_name    = "delete_lambda_function"
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "delete.delete_handler_compliment"
+  source_code_hash = data.archive_file.lambda.output_base64sha256
+  timeout          = 10
+  runtime          = "python3.9"
+
+  environment {
+    variables = merge(
+      local.shared_env,
+      {
+        ENDPOINT_URL_LAMBDA = "${var.ENDPOINT_URL_LAMBDA}"
+      }
+    )
+  }
+}
+
+
 # ---- API Gateway ----
 
-# Lambda Permission for API Gateway
+# Lambda Permission for API Gateway Get
 resource "aws_lambda_permission" "api_gw" {
   statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.get_lambda_function.function_name
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.lambda.execution_arn}/*/*/compliment"
+  source_arn    = "${aws_api_gateway_rest_api.lambda.execution_arn}/*/GET/compliment"
+}
+
+# Lambda Permission for API Gateway Delete
+resource "aws_lambda_permission" "api_gw_delete" {
+  statement_id  = "AllowAPIGatewayInvokeDelete"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.delete_lambda_function.function_name
+  principal     = "apigateway.amazonaws.com"
+
+  source_arn    = "${aws_api_gateway_rest_api.lambda.execution_arn}/*/DELETE/compliment/*"
 }
