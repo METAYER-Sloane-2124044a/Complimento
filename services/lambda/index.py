@@ -29,7 +29,7 @@ def get_handler_compliment(event, context):
             return {
                 "statusCode": 400,
                 "headers": cors_headers,
-                "body": json.dumps({"message": "Paramètre 'type' manquant.", "image": ""})
+                "body": json.dumps({"message": "Paramètre 'type' manquant."})
             }
 
         type_selected = query_params['type']
@@ -51,12 +51,11 @@ def get_handler_compliment(event, context):
                 "headers": cors_headers,
                 "body": json.dumps({
                     "message": "Je n'ai rien pour ce type... mais tu es incroyable !",
-                    "image": ""
                 })
             }
 
         type_item = items_types[0]  # celui trouvé
-        type_id = type_item["id"]
+        type_id = int(type_item["id"])
         print("Type ID found:", type_id)
 
         type_image = type_item.get("image", "")
@@ -85,6 +84,7 @@ def get_handler_compliment(event, context):
         print("Selected random compliment:", compliment)
 
         message = compliment.get("message", "")
+        compliment_id = int(compliment.get("id"))
 
         # Retourner message + image associée au type
         return {
@@ -92,7 +92,8 @@ def get_handler_compliment(event, context):
             "headers": cors_headers,
             "body": json.dumps({
                 "message": message,
-                "image": type_image
+                "image": type_image,
+                "id": compliment_id
             })
         }
 
@@ -101,5 +102,5 @@ def get_handler_compliment(event, context):
         return {
             "statusCode": 500,
             "headers": cors_headers,
-            "body": json.dumps({"message": str(e), "image": ""})
+            "body": json.dumps({"message": str(e)})
         }
