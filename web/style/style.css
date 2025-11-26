@@ -91,7 +91,17 @@ section{
     justify-content: space-between;
 }
 
-#txtCompliment {
+#compliment-container {
+    flex: 1; /* To take available space between the 2 images */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+#txt-compliment {
+    box-sizing: border-box;
     opacity: 0;
     transform: translateY(0);
     font-size: 1.2em;
@@ -105,6 +115,28 @@ section{
     text-align: center;
     line-height: 1.8;
     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#btn-delete {
+    display: none;
+    margin: 10px auto;
+    cursor: pointer;
+
+    background: transparent;
+    border: 1px solid #ffb6c1;
+    color: #999;
+    
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: var(--font-douce); 
+    font-size: 0.8em;
+    transition: 0.3s;
+}
+
+#btn-delete:hover {
+    color: #e57373;
+    border-color: #e57373;
+    background: rgb(255, 250, 250);
 }
 
 .buttons {
@@ -208,7 +240,7 @@ section{
         padding: 12px 0;
     }
 
-    #txtCompliment {
+    #txt-compliment {
         width: auto;
         height: 100%;
     }
