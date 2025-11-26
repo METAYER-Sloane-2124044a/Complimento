@@ -1,0 +1,5 @@
+ENDPOINT_URL="http://localhost:4566"
+ENDPOINT_URL_LAMBDA = "http://localstack:4566"
+REGION_NAME="us-east-1"
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY=""

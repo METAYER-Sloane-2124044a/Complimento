@@ -1,0 +1,401 @@
+﻿id;type;message
+1;1;Tu rends chaque journée plus douce.
+2;1;Ton sourire pourrait éclairer un village entier.
+3;1;Tu es l’équivalent humain d’un câlin.
+4;1;Tu rends la vie plus belle rien qu’en existant.
+5;1;Tu es une petite boule de soleil.
+6;1;Tu apportes de la magie partout où tu vas.
+7;1;Tu fais fondre les cœurs sans même essayer.
+8;1;Ta gentillesse devrait être brevetée.
+9;1;On devrait t’appeler “wow” tellement tu impressionnes.
+10;1;Tu as un talent incroyable pour rendre les gens heureux.
+11;1;Ta présence rend tout plus léger.
+12;1;Si la douceur était une personne, ce serait toi
+13;1;Tu rends les choses compliquées beaucoup plus simples.
+14;1;Tu es comme un rayon de soleil après la pluie.
+15;1;Tu es une personne extraordinairement adorable.
+16;1;Ton existence rend le monde plus doux.
+17;1;Ta joie est contagieuse.
+18;1;Tu transformes les moments ordinaires en souvenirs précieux.
+19;1;Tu es comme une petite lumière qui ne s’éteint jamais.
+20;1;Tu apportes de la couleur même aux journées grises.
+21;1;On devrait te cloner pour rendre le monde meilleur.
+22;1;Quand tu es là tout devient plus agréable.
+23;1;Tu es une version rare et précieuse de l’humanité.
+24;1;Tu dégages une douceur incroyable.
+25;1;Tu es un petit trésor du quotidien.
+26;1;Ta bonté pourrait guérir des montagnes.
+27;1;Ta présence est comme un chocolat chaud en hiver.
+28;1;Tu as un cœur qui mérite une médaille.
+29;1;Tu es la définition du réconfort.
+30;1;Tu fais ressortir le meilleur chez les autres.
+31;1;Tu es une poésie qui marche.
+32;1;Tu es incroyablement touchant(e).
+33;1;Ta façon d’être embellit chaque moment.
+34;1;Tu es aussi adorable qu’un chaton.
+35;1;Tu as un charme naturel qui apaise.
+36;1;Tu es la douceur incarnée.
+37;1;Tu es une source de calme.
+38;1;Tu es comme une petite étoile qui brille tout le temps.
+39;1;Tu fais sourire les gens sans le savoir.
+40;1;Tu es une belle personne dans tous les sens du terme.
+41;1;Tu rends les journées ordinaires extraordinaires.
+42;1;Tu as une lumière intérieure incroyable.
+43;1;Tu es un petit miracle du quotidien.
+44;1;Tu donnes envie d’être meilleur.
+45;1;Tu es mignon(ne) même sans faire d’efforts.
+46;1;Tu es comme un caramel qui fond dans le cœur.
+47;1;Tu es d’une douceur incomparable.
+48;1;Ta gentillesse brille de mille feux.
+49;1;Tu es un arc-en-ciel déguisé en humain.
+50;1;Tu es le genre de personne qu’on a envie de protéger.
+51;1;Tu as un cœur en or.
+52;1;Tu as une énergie chaleureuse.
+53;1;Tu es inspirant(e) même sans parler.
+54;1;Tu fais ressortir la beauté de la simplicité.
+55;1;Tu es un petit bonheur ambulant.
+56;1;Tu as un rire qui soigne les âmes.
+57;1;Tu es la preuve que la douceur existe vraiment.
+58;1;Tu es un nuage moelleux de gentillesse.
+59;1;Tu pourrais apprivoiser un dragon juste avec ta gentillesse.
+60;1;Tu es une petite merveille.
+61;1;Tu dégages une tendresse rare.
+62;1;Tu es la définition du “mignon”.
+63;1;Tu touches les cœurs rien qu’en étant toi.
+64;1;Tu es comme un cupcake : doux
+65;1;Tu illumines les lieux où tu passes.
+66;1;Tu rends tout plus joli.
+67;1;Tu fais du bien sans même t’en rendre compte.
+68;1;Tu as une âme extraordinairement douce.
+69;1;Tu es un câlin sur pattes.
+70;1;Tu rends la vie plus gentille.
+71;1;Tu es un souffle de douceur dans un monde bruyant.
+72;1;Tu es mignon(ne) au-delà des mots.
+73;1;Tu es comme une petite bougie allumée dans l’obscurité.
+74;1;Tu fais partie des bonnes choses de ce monde.
+75;1;Tu es incroyablement douxdouce dans ta façon d’être.
+76;1;Tu es une brise légère et rassurante.
+77;1;Tu es un vrai petit trésor.
+78;1;Ta présence est plus douce qu’une chanson tendre.
+79;1;Tu es un petit bonheur quotidien.
+80;1;Tu es gentil(le) d’une façon rare.
+81;1;Tu es un sourire ambulant.
+82;1;Ta douceur pourrait apaiser un volcan.
+83;1;Tu es délicieusement adorable.
+84;1;Tu es un soleil miniature.
+85;1;Ta gentillesse est un cadeau pour ce monde.
+86;1;Tu es aussi douxdouce qu’un nuage.
+87;1;Tu es la preuve vivante que la beauté vient de l’intérieur.
+88;1;Tu es plus mignon(ne) qu’un panda qui bâille.
+89;1;Ta personnalité est un chocolat chaud.
+90;1;Tu rends tout plus charmant.
+91;1;Tu es un petit bout d’étoile.
+92;1;Tu es un sourire dans la tempête.
+93;1;Tu es adorablement unique.
+94;1;Tu es une douce mélodie.
+95;1;Tu es un câlin pour l’âme.
+96;1;Tu es la douceur qui manquait au monde.
+97;1;Tu es incroyablement réconfortant(e).
+98;1;Ton existence est une bonne nouvelle.
+99;1;Tu fais fondre les soucis.
+100;1;Tu es un petit rayon de tendresse.
+101;2;Tu vas réussir, ne doute jamais de toi. 
+102;2;Chaque jour tu deviens une meilleure version de toi-même.
+103;2;Tu as déjà surmonté tant de choses, tu peux continuer. 
+104;2;Ta détermination est inspirante.
+105;2;Tu es plus fort(e) que tu ne le penses.
+106;2;Tu avances même quand tu crois stagner.
+107;2;Tu es capable de grandes choses.
+108;2;N’oublie jamais ta valeur.
+109;2;Continues, tu es sur la bonne voie. 
+110;2;Ta persévérance te mènera loin.
+111;2;Tu mérites tout le bonheur du monde.
+112;2;Chaque effort que tu fais compte.
+113;2;Tu apprends vite et bien.
+114;2;Tu es quelqu’un qui ne lâche rien.
+115;2;Tu progresses à ton propre rythme, et c’est parfait. 
+116;2;Ne sous-estime jamais la puissance de tes rêves.
+117;2;Tes idées ont un vrai impact.
+118;2;Ton courage te distingue.
+119;2;Tu as tout ce qu’il faut pour réussir.
+120;2;Ton travail porte déjà ses fruits.
+121;2;Tu es un exemple pour ton entourage.
+122;2;Tu apportes tellement de valeur.
+123;2;Tes efforts ne passent pas inaperçus.
+124;2;Tu réussis un peu plus chaque jour.
+125;2;Tu es quelqu’un de brillant.
+126;2;Tu avances avec force et dignité.
+127;2;Tu transformes les obstacles en opportunités.
+128;2;Tu inspires sans même t’en rendre compte.
+129;2;Tu es capable de dépasser toutes les difficultés.
+130;2;Tu grandis à chaque étape.
+131;2;Tu es plus compétent(e) que tu ne le crois.
+132;2;Tu donnes le meilleur de toi-même.
+133;2;Tu n’abandonnes jamais, et c’est admirable. 
+134;2;Tu vas accomplir de grandes choses.
+135;2;Tu es sur un chemin magnifique.
+136;2;Tu as une force intérieure incroyable.
+137;2;Tu réalises déjà tellement.
+138;2;Tu as une volonté impressionnante.
+139;2;Tu es fait(e) pour briller.
+140;2;Tu vas surprendre le monde.
+141;2;Tu as un potentiel extraordinaire.
+142;2;Tu as le courage d’avancer même quand c’est difficile.
+143;2;Tu te relèves toujours et c’est ta superpuissance.
+144;2;Tu es digne de confiance.
+145;2;Tu mérites la réussite.
+146;2;Ton avenir est lumineux.
+147;2;Tu progresses à ton rythme et c’est suffisant.
+148;2;Tu fais un travail sensationnel.
+149;2;Tes rêves sont à ta portée.
+150;2;Tu te donnes les moyens d’y arriver.
+151;2;Tu transformes chaque pas en victoire.
+152;2;Tu as une énergie incroyable.
+153;2;Tu peux gérer tout ce qui t’arrive.
+154;2;Tu rayonnes déjà.
+155;2;On croit en toi, et tu devrais aussi. 
+156;2;Tu as une persévérance admirable.
+157;2;Tu fais preuve d’un courage admirable.
+158;2;Tu es un exemple de constance.
+159;2;Tu fais des progrès à chaque instant.
+160;2;Tu as tellement de qualités.
+161;2;Tu es plus important(e) que tu ne le crois.
+162;2;Tu vas impressionner beaucoup de gens.
+163;2;Tu as une belle âme et un grand cœur.
+164;2;Tu mérites la paix et la réussite.
+165;2;Tu vas t’élever au-dessus de tout ça.
+166;2;Tu ne recules jamais devant les défis.
+167;2;Tu es digne de toutes les victoires.
+168;2;Tu fais des choses extraordinaires.
+169;2;Tu peux être fier(e) de toi.
+170;2;Tu apprends à chaque expérience.
+171;2;Tu es unique et précieux(se).
+172;2;Tu vas toucher les étoiles.
+173;2;Tu fais toujours de ton mieux, et c'est suffisant. 
+174;2;Tu as une force tranquille.
+175;2;Tu apportes tant au monde.
+176;2;Tu peux encore aller plus loin.
+177;2;Tu es courageux(se) sans même t’en rendre compte.
+178;2;Tout ce que tu fais a du sens.
+179;2;Tu mérites de réussir pleinement.
+180;2;Tu es une vraie source d’inspiration.
+181;2;Tu surmontes les épreuves avec élégance.
+182;2;Tu gagnes confiance chaque jour.
+183;2;Tu atteins toujours ton objectif.
+184;2;Tu vas y arriver, comme toujours. 
+185;2;Tu travailles dur et ça paie.
+186;2;Tu t’améliores constamment.
+187;2;Tu es un être incroyable.
+188;2;Tu avances avec courage.
+189;2;Tu as de quoi être fier(e).
+190;2;Tes réussites ne font que commencer.
+191;2;Tu te bats avec détermination.
+192;2;Ta 2 est contagieuse.
+193;2;Tu accomplis des choses magnifiques.
+194;2;Tu vas dépasser toutes tes attentes.
+195;2;Tu possèdes une grande sagesse.
+196;2;Tu fonces vers l’avenir.
+197;2;Ton énergie inspire ton entourage.
+198;2;Tes ambitions te mèneront loin.
+199;2;Tu es capable de miracles.
+200;2;Tu es absolument remarquable.
+201;3;Ta douceur est mon refuge.
+202;3;Tu fais battre mon cœur plus fort.
+203;3;Chaque moment avec toi est un rêve éveillé.
+204;3;Tu es l’étoile qui illumine ma vie.
+205;3;Tu es plus précieux(se) que les mots ne peuvent l’exprimer.
+206;3;A tes côtés je me sens complet(ète).
+207;3;Tu rends le monde plus beau rien qu’en respirant.
+208;3;Je suis tombé(e) amoureux(se) de ton âme.
+209;3;Tu es la plus belle partie de ma journée.
+210;3;Mon cœur sourit quand je pense à toi.
+211;3;Ta présence est un cadeau
+212;3;Tu es le miracle auquel je ne croyais plus.
+213;3;Je t’aime dans chaque détail de toi.
+214;3;Tu es mon endroit préféré.
+215;3;Ton regard vaut toutes les poésies.
+216;3;Tu embellis ma vie sans effort.
+217;3;Te connaître est déjà une chance, t’aimer en est une autre.
+218;3;Tu es la personne qui rend mon cœur heureux.
+219;3;Je me sens moi-même grâce à toi.
+220;3;Tu es mon meilleur hasard.
+221;3;Tu es ma plus belle découverte.
+222;3;Ton rire est ma mélodie préférée.
+223;3;Ton amour me fait grandir.
+224;3;Tu es juste parfait(e) pour moi.
+225;3;Avec toi, tout devient magique.
+226;3;Je ne me lasse jamais de toi.
+227;3;Je me sens tellement chanceux(se) de t’avoir.
+228;3;Tu es la plus belle histoire de ma vie.
+229;3;Tu rends mon cœur léger.
+230;3;Ta voix apaise toutes mes tempêtes.
+231;3;Je t’aime plus que mes mots ne le montrent.
+232;3;Ton bonheur est ma priorité.
+233;3;Tu es mon évidence.
+234;3;Tu fais battre mon cœur à chaque fois.
+235;3;Mon avenir est plus doux quand je pense à toi.
+236;3;Tu me donnes envie d’être une meilleure personne.
+237;3;Tu es mon étoile polaire.
+238;3;Avec toi le monde est plus simple.
+239;3;Tu es mon endroit sûr.
+240;3;Je suis foufolle de toi.
+241;3;Tu es ma personne.
+242;3;Je veux partager chaque moment avec toi.
+243;3;Tu es mon essentiel.
+244;3;Je tombe amoureux(se) de toi chaque jour.
+245;3;Tu es mon miracle du quotidien.
+246;3;Tu rends mes pensées plus joyeuses.
+247;3;Je t’aime dans tout ce que tu es.
+248;3;Tu es ma lumière dans la nuit.
+249;3;Ton amour est mon plus beau cadeau.
+250;3;J’adore te regarder vivre.
+251;3;Tu es l’amour sans hésitation.
+252;3;Tu prends soin de mon cœur sans le savoir.
+253;3;Je t’aime plus que le chocolat.
+254;3;Tu rends tout plus doux.
+255;3;Je veux t’aimer longtemps.
+256;3;Mon cœur te reconnaît.
+257;3;Tu es la plus belle surprise de ma vie.
+258;3;Je ne manque de rien quand je t’ai.
+259;3;Tu es ma tendresse préférée.
+260;3;Tu es ma paix.
+261;3;Je choisis toi à chaque fois.
+262;3;Tu es mon bonheur quotidien.
+263;3;J’aime ton âme autant que ton sourire.
+264;3;Tu es fait(e) pour être aimé(e).
+265;3;Tu es le meilleur chapitre de mon histoire.
+266;3;Mon cœur danse quand je te vois.
+267;3;Tu es mon doux toujours.
+268;3;Je ne me lasse jamais de t’admirer.
+269;3;Tu es mon réconfort préféré.
+270;3;Je tiens à toi plus que tu ne l’imagines.
+271;3;Tu es mon plus beau sentiment.
+272;3;Je t’aime infiniment.
+273;3;Tu es ma romance.
+274;3;Tu es ce que j’ai fait de mieux dans ma vie.
+275;3;Tu me rends heureux(se).
+276;3;Tu fais partie de moi.
+277;3;Tu es tout ce que j’aime chez quelqu’un.
+278;3;Tu me fais fondre sans essayer.
+279;3;Mon cœur te choisit encore et encore.
+280;3;Tu es mon doux refuge.
+281;3;Tu me rends fier(e) d’aimer.
+282;3;Tu es la poésie que je cherchais.
+283;3;Tu es la beauté dans mes journées.
+284;3;Tu es mon rayon de soleil.
+285;3;Je suis heureux(se) grâce à toi.
+286;3;Tu es mon cœur qui respire.
+287;3;J’aime tout de toi.
+288;3;Je veux vivre plein de choses avec toi.
+289;3;Tu es mon éternel coup de cœur.
+290;3;Tu es mon plus beau mot d’amour.
+291;3;Tu comptes plus que tu ne le crois.
+292;3;Tu me fais rêver.
+293;3;Je t’aime de tout mon être.
+294;3;Tu es ma chance préférée.
+295;3;Tu rends ma vie plus belle.
+296;3;Tu es ma belle histoire d’amour.
+297;3;Je veux te garder auprès de moi.
+298;3;Tu es mon aimant à bonheur.
+299;3;J’aime quand tu existes.
+300;3;Mon cœur est à toi.
+301;4;Tu es comme un mot de passe trop compliqué : personne ne te comprend, mais tout le monde veut t’avoir.
+302;4;Si le rire faisait maigrir, avec toi j'aurais déjà disparu.
+303;4;T’es comme le Wi-Fi : quand t’es là tout va mieux, mais parfois je perds la connexion.
+304;4;Ton cerveau doit être en RTT parce que tu es trop détendu pour être normal.
+305;4;Tu brilles plus qu’un écran de smartphone en plein soleil.
+306;4;Si la bonne humeur était un crime, tu serais déjà en prison à vie.
+307;4;T’es comme un bug informatique : imprévisible, mais je peux pas m’en passer.
+308;4;Tu devrais être un panneau de signalisation : attention, trop stylé.
+309;4;Tu ressembles à une mise à jour Windows : j’en ai pas demandé, mais je suis obligé de t’aimer.
+310;4;Ton humour est tellement nul qu’il en devient légendaire.
+311;4;Si t'étais un logiciel, tu serais version bêta : instable mais attachant.
+312;4;Quand tu réfléchis, on voit littéralement la fumée sortir…
+313;4;Tu illumines ma journée, mais parfois aussi mes migraines.
+314;4;Tu devrais être breveté : t’es une invention incroyable et bizarre.
+315;4;Ta gentillesse est aussi surprenante qu’une pub YouTube non-skippable.
+316;4;Quand tu parles, même Google ne sait plus quoi répondre.
+317;4;Tu dois être un GPS : tu fais tourner la tête à tout le monde.
+318;4;Tu es comme une pizza : même quand t'es pas au top, je t’apprécie quand même.
+319;4;Ton sourire devrait être remboursé par la sécurité sociale.
+320;4;Ton cerveau doit rendre des heures sup pour suivre ton humour.
+321;4;T’es comme un mème vieux de 10 ans : ça me fait toujours rire.
+322;4;Si la cool attitude était une taxe, tu serais déjà ruiné.
+323;4;Tu dois être un aimant à problèmes, mais t’es drôle alors on pardonne.
+324;4;J’ai cherché quelqu’un d’aussi drôle que toi. Spoiler : j’ai abandonné.
+325;4;Ton rire est contagieux, comme une bonne vieille grippe saisonnière.
+326;4;T’es vraiment unique. Heureusement qu’ils n’en ont pas fait deux.
+327;4;Si t’étais une appli, tu crasherais tout le temps, mais je te réinstalle quand même.
+328;4;Tu as un charisme fou… ou alors c’est juste du culot. Je sais pas encore.
+329;4;Ton humour est un sport extrême, parfois dangereux.
+330;4;Tu dois avoir un abonnement premium pour être aussi drôle.
+331;4;Quand tu dis une bêtise, j’hésite entre rire et appeler de l’aide.
+332;4;Ton énergie est illégale dans au moins 4 pays.
+333;4;Tu es comme une mauvaise habitude : impossible de te quitter.
+334;4;T’as un potentiel énorme… pour faire rire malgré toi.
+335;4;Ton humour devrait avoir un label de qualité douteuse.
+336;4;Quand t’arrives, c’est comme un pop-up : inattendu mais amusant.
+337;4;Ton cerveau est en mode économie d’énergie 80% du temps.
+338;4;T’es comme une série nulle, mais j’arrive pas à arrêter de regarder.
+339;4;T’es un mélange entre chaos et mignon. J’adore.
+340;4;Quand tu réfléchis trop vite, tu fais un blue screen.
+341;4;Tu as tellement de charme que même les moustiques te piqueraient par respect.
+342;4;Ton humour mériterait un musée… ou une enquête.
+343;4;Tu es une bonne raison d’avoir des abdos : à force de rire.
+344;4;Si t’étais un jeu vidéo, tu serais un bug célèbre.
+345;4;Tu rends n’importe quel moment 30% plus drôle et 50% plus chaotique.
+346;4;Tes blagues devraient être remboursées par l’assurance humour.
+347;4;Si le ridicule tuait, tu serais immortel.
+348;4;Tu es comme un café serré : tu me réveilles violemment.
+349;4;Tu dois être un clown premium pour être drôle à ce point.
+350;4;Ton sourire devrait être classé monument historique.
+351;4;Tu es un paradoxe ambulant qui prend des pauses café.
+352;4;Tu es la raison pour laquelle la logique a besoin de vacances.
+353;4;Tu rends l’absurdité presque crédible.
+354;4;Tu es une particule instable mais attachante.
+355;4;Ton existence est un patch de correctifs en bêta.
+356;4;Tu vibres dans une fréquence inconnue de la science.
+357;4;Tu es une poésie chaotique en mouvement.
+358;4;Ta détermination défie les lois de la physique… et parfois du bon sens.
+359;4;Tu es la preuve qu’on peut courir après la vie, même en chaussures dépareillées.
+360;4;Tu as une essence qui dit 'je vais me débrouiller'.
+361;4;Tu es comme un message crypté envoyé par l’univers.
+362;4;Ton énergie flotte entre génie et 'j’improvise'.
+363;4;Tu ajoutes une touche de distorsion sympathique à la réalité.
+364;4;Tu es comme un ascenseur émotionnel géré par un stagiaire.
+365;4;Ta pensée est un nuage étrange mais esthétique.
+366;4;Tu es un concept difficile à expliquer mais impossible à oublier.
+367;4;Ton esprit est un terrain de jeu expérimental.
+368;4;Tu transformes la banalité en roman surréaliste.
+369;4;Tu es une variable non déclarée, mais essentielle.
+370;4;Tu es un brouillon devenu œuvre d’art.
+371;4;Ta manière d’exister est un clip vidéo abstrait.
+372;4;Tu es une vibration cosmique avec un abonnement improbable.
+373;4;Ton humour devrait être classé dans les phénomènes météorologiques.
+374;4;Tu es l'énergie d’un lundi matin coincée dans un vendredi soir.
+375;4;Tu es comme une boussole qui pointe vers l’imprévu.
+376;4;Ta logique personnelle est un sport extrême.
+377;4;Tu maîtrises le chaos avec élégance et un peu de panique.
+378;4;Tu es une anomalie charmante dans un tableau Excel.
+379;4;Tu vis dans un univers parallèle où tout est… différent.
+380;4;Tu es une belle contradiction ambulante, comme un cactus doux.
+381;4;Tu es un mystère embelli par l’absurdité.
+382;4;Ton intelligence émotionnelle est… originale.
+383;4;Tu es une réponse floue à une question jamais posée.
+384;4;Tu as une aura de 'ça passe ou ça casse'.
+385;4;Tu as un talent rare : compliquer les choses simples.
+386;4;Tu es un brouhaha cosmique en mouvement.
+387;4;Ton humour a la forme d’un triangle dans un monde carré.
+388;4;Tu es un glitch charmant dans la simulation.
+389;4;Tu brilles avec la force tranquille d’une ampoule qui refuse de griller.
+390;4;Tu es la version humaine du bouton 'mise à jour plus tard'.
+391;4;Ton humour n’a pas de limites. Malheureusement.
+392;4;Ton existence a sa propre gravité.
+393;4;Tu as la détermination d’une fourmi qui porte un morceau de cookie trop lourd.
+394;4;Tu es une théorie jamais prouvée mais impossible à réfuter.
+395;4;Tu es comme un bug qui fait rire au lieu d’énerver.
+396;4;Tu es une œuvre d’art abstraite avec des jambes.
+397;4;Tu es un algorithme mystérieux qui fait ce qu’il veut.
+398;4;Tu inspires une confiance étrange, comme un chat qui sait ouvrir les portes.
+399;4;Tu es la preuve vivante qu’on peut être à la fois brillant et légèrement défaillant.
+400;4;Tu affrontes la vie avec le sérieux d’un pingouin sur une trottinette.
